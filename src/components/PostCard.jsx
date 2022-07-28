@@ -5,14 +5,14 @@ export const PostCard = ({ post }) => {
   const navigate = useNavigate();
 
   return (
-    <div className="m-32" key={post._id}>
-      <div className="w-[500px] bg-slate-100 hover:bg-sky-100 rounded-lg border border-gray-200 shadow-2xl">
+    <div className="m-auto md:ml-64 lg:m-auto p-4" key={post._id}>
+      <div className="w-full md:w-[500px] bg-slate-100 hover:bg-sky-100 rounded-lg border border-gray-200 shadow-2xl">
         <div>
           {post.image && (
             <img
               src={post.image.url}
               alt={post.title}
-              className="rounded-t-lg"
+              className="rounded-lg"
             />
           )}
         </div>

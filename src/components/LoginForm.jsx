@@ -14,8 +14,8 @@ export const LoginForm = () => {
   return (
     <>
       <div className="flex w-full login_img_section items-center">
-        <div className="w-full mx-auto px-20 flex items-center justify-center gap-32">
-          <div>
+        <div className="w-full px-8 md:px-28 lg:px-48 2xl:px-96 md:flex items-center justify-center lg:gap-8 md:gap-10 ">
+          <div className="text-center mb-12">
             <h1 className="text-slate-800 font-bold text-6xl font-sans">
               Posts App
             </h1>
@@ -24,21 +24,21 @@ export const LoginForm = () => {
               <span>Log in to access the app</span>
               <span>You are not registered?</span>
             </div>
-            <div className="flex justify-center lg:justify-start mt-2">
+            <div className="flex justify-center mt-2">
               <Link
                 to="/register"
-                className="hover:bg-indigo-700 hover:text-white hover:-translate-y-1 transition-all duration-500 bg-white text-indigo-800 mt-4 px-4 py-2 rounded-2xl font-bold mb-2"
+                className="bg-blue-800 hover:bg-slate-100 hover:text-blue-800 text-slate-100 mt-4 px-4 py-2 rounded-2xl hover:font-bold mb-2"
               >
                 Register
               </Link>
             </div>
           </div>
-          <div className="lg:w-1/4 md:w-1/2 w-2/3">
+          <div className="lg:w-1/2 md:w-3/4 sm:w-2/3 w-full mx-auto">
             <form
               onSubmit={handleSubmit}
-              className="bg-gradient-to-r from-slate-300 to-slate-200 p-10 rounded-lg shadow-2xl w-full"
+              className="bg-gradient-to-r from-slate-200 to-slate-300 p-8 md:p-10 lg:p-12 rounded-lg shadow-2xl"
             >
-              <h1 className="text-center text-2xl mb-6 text-gray-800 font-bold font-sans">
+              <h1 className="text-center text-3xl mb-6 text-gray-800 font-bold border-b-2 border-slate-100 pb-2">
                 Login
               </h1>
               <div>
@@ -52,7 +52,7 @@ export const LoginForm = () => {
                   <input
                     type="email"
                     placeholder="E-mail"
-                    className="w-full bg-gray-100 px-4 py-2 rounded-lg focus:outline-none"
+                    className="w-full bg-gray-100 px-4 py-2 rounded-r-lg focus:outline-none"
                     value={email}
                     name="email"
                     onChange={(e) => setEmail(e.target.value)}

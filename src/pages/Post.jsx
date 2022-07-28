@@ -116,16 +116,16 @@ export const Post = () => {
   if (!isSubmitDelete)
     return (
       <div>
-        <div className="right-32 top-10 fixed">
+        <div className="invisible lg:visible right-32 top-10 fixed">
           <Link to={"/"} title="Go Home">
             <GoHome className="w-14 h-14 p-3 bg-blue-700 hover:bg-blue-500 rounded-full text-slate-100" />
           </Link>
         </div>
         <div
-          className="flex justify-center items-center gap-20 mt-12 ml-32"
+          className="flex flex-col lg:flex-row justify-center items-center gap-20 mt-32 lg:mt-10 mx-2 lg:ml-32"
           key={post._id}
         >
-          <div className="w-96 h-full shadow-2xl">
+          <div className="w-full md:w-1/2 lg:w-96 h-full md:ml-32 lg:ml-2 shadow-2xl">
             <div className="p-12 bg-sky-200 hover:bg-sky-300">
               <div className="flex justify-end gap-12 pb-4 border-b-2 border-black">
                 <button
@@ -165,7 +165,7 @@ export const Post = () => {
             </div>
           </div>
           <div className={isVisible}>
-            <button onClick={() => setHidden(true)} className="ml-80">
+            <button onClick={() => setHidden(true)} className="ml-72 md:ml-32 lg:ml-80">
               <p className="flex cursor-pointer">
                 close <GrFormClose className="w-5 h-5 mt-1" />
               </p>
@@ -173,7 +173,7 @@ export const Post = () => {
 
             <form
               onSubmit={handleSubmit}
-              className="flex flex-col bg-gradient-to-r from-slate-200 to-slate-300 shadow-lg rounded-xl p-10 mb-32 border-2 border-solid border-white"
+              className="flex flex-col bg-gradient-to-r from-slate-200 to-slate-300 shadow-lg rounded-xl p-6 mx-2 mb-32 lg:mb-16 md:ml-32 lg:ml-2 border-2 border-solid border-white"
             >
               <h3 className="flex justify-center text-slate-800 font-bold font-mono text-2xl pb-8">
                 Edit Post

@@ -13,17 +13,17 @@ export default function Navbar() {
 
   if (user)
     return (
-      <>
+      <div>
         {!isOpen ? (
-          <nav className="top-0 left-0 fixed bg-gradient-to-r from-blue-800 to-sky-700 w-24 h-full shadow-2xl">
-            <div className="flex flex-col">
+          <nav className="top-0 left-0 fixed bg-gradient-to-r from-blue-800 to-sky-700 w-full md:w-24 h-16 md:h-full p-2 shadow-2xl">
+            <div className="flex md:flex-col">
               <button
-                className="fixed left-16 top-6 text-white cursor-pointer"
+                className="fixed left-16 top-6 text-white cursor-pointer invisible md:visible"
                 onClick={() => setIsOpen(!isOpen)}
               >
                 <BsArrowRightCircle className="w-6 h-6" />
               </button>
-              <div className="flex flex-col items-center my-32">
+              <div className="flex md:flex-col items-center md:my-32">
                 {user && (
                   <div className="flex flex-col gap-4 items-center">
                     <span className="flex justify-center w-12 h-12 text-3xl py-1 text-sky-700 font-semibold rounded-3xl bg-white">
@@ -33,33 +33,33 @@ export default function Navbar() {
                 )}
               </div>
               {user && (
-                <div>
-                  <ul className="flex flex-col gap-12 list-none">
-                    <li className="nav-item">
+                <div className="flex items-center mx-auto">
+                  <ul className="flex md:flex-col gap-12 list-none">
+                    <li>
                       <NavLink
-                        className="flex text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                        className="flex hover:opacity-75 border-0 hover:border-0"
                         to="/"
                       >
-                        <span className="ml-6" title="Posts">
+                        <span className="mx-auto" title="Posts">
                           <BsFileEarmarkPost className="w-6 h-6 mb-2" />
                         </span>
                       </NavLink>
                     </li>
-                    <li className="nav-item">
+                    <li>
                       <NavLink
-                        className="flex text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                        className="flex hover:opacity-75 border-0 hover:border-0"
                         to="/newPost"
                       >
-                        <span className="ml-6" title="New Post">
+                        <span className="mx-auto" title="New Post">
                           <MdPostAdd className="w-6 h-6 mb-2" />
                         </span>
                       </NavLink>
                     </li>
 
-                    <li className="nav-item">
+                    <li>
                       {user && (
                         <button
-                          className="ml-6 text-white hover:opacity-75"
+                          className="mx-auto text-white hover:opacity-75"
                           onClick={logout}
                           title="Logout"
                         >
@@ -94,7 +94,7 @@ export default function Navbar() {
                   <ul className="flex flex-col gap-8 list-none lg:ml-auto">
                     <li className="nav-item">
                       <NavLink
-                        className="px-6 py-2 flex text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                        className="px-6 py-2 flex text-xs uppercase font-bold leading-snug text-white hover:opacity-75 border-0 hover:border-0"
                         to="/"
                       >
                         <span className="ml-2 flex items-center gap-4">
@@ -104,7 +104,7 @@ export default function Navbar() {
                     </li>
                     <li className="nav-item">
                       <NavLink
-                        className="px-6 py-2 flex text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                        className="px-6 py-2 flex text-xs uppercase font-bold leading-snug text-white hover:opacity-75 border-0 hover:border-0"
                         to="/newPost"
                       >
                         <span className="ml-2 flex items-center gap-4">
@@ -148,6 +148,6 @@ export default function Navbar() {
             </div>
           </nav>
         )}
-      </>
+      </div>
     );
 }

@@ -54,7 +54,7 @@ export const Home = () => {
         <div className="flex items-center">
           <Link
             to="/newPost"
-            className="text-xl text-white p-3 rounded-full bg-blue-700 hover:bg-sky-600  top-10 right-72 fixed"
+            className="text-xl text-white p-3 rounded-full bg-blue-700 hover:bg-sky-600  bottom-10 right-72 fixed"
             title="New Post"
           >
             <IoMdAdd className="w-8 h-8" />
@@ -64,15 +64,15 @@ export const Home = () => {
     );
 
   return (
-    <div>
-      <div className="flex justify-center pt-12">
-        <div className="flex fixed left-72 top-10">
+    <>
+      <div className="flex flex-col md:flex items-center justify-center gap-4 pt-10">
+        <div className="flex pt-10 lg:fixed md:left-72 md:top-10">
           <h2 className="text-2xl text-black py-2 font-bold">Posts</h2>
           <span className="rounded-full bg-blue-700 px-5 py-2 mx-4 text-2xl text-white">
             {posts.length}
           </span>
         </div>
-        <form className="flex items-center fixed right-12 top-12">
+        <form className="flex items-center lg:fixed md:right-12 lg:right-32 md:top-20">
           <div className="relative w-full">
             <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
               <svg
@@ -101,7 +101,7 @@ export const Home = () => {
         <div className="flex items-center">
           <Link
             to="/newPost"
-            className="text-xl text-white p-3 rounded-full bg-blue-700 bottom-28 right-48 fixed"
+            className="invisible md:visible text-xl text-white p-3 rounded-full bg-blue-700 bottom-10 right-10 fixed"
             title="New Post"
           >
             <IoMdAdd className="w-8 h-8 text-white" />
@@ -109,11 +109,11 @@ export const Home = () => {
         </div>
       </div>
 
-      <div className="flex flex-col gap-4 items-center">
+      <div className="flex flex-col gap-4 pt-12">
         {posts.map((post) => (
           <PostCard post={post} key={post._id} />
         ))}
       </div>
-    </div>
+    </>
   );
 };
