@@ -3,7 +3,7 @@ import axios from "axios";
 export const loginService = async (credentials) => {
   try {
     const res = await axios.post(
-      "http://localhost:4000/api/auth/login",
+      "https://app-server-arielstereo.vercel.app/api/auth/login",
       credentials
     );
     return res.data;
@@ -15,7 +15,7 @@ export const loginService = async (credentials) => {
 export const registerService = async (user) => {
   try {
     const res = await axios.post(
-      "http://localhost:4000/api/auth/register",
+      "https://app-server-arielstereo.vercel.app/api/auth/register",
       user
     );
     return res.data;
