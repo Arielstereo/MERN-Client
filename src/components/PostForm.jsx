@@ -48,18 +48,18 @@ export const PostForm = () => {
     <div className="w-full">
       <div className="invisible lg:visible right-32 top-10 fixed">
         <Link to={"/"} title="Go Home">
-          <GoHome className="w-14 h-14 p-3 bg-blue-500 rounded-full text-slate-100" />
+          <GoHome className="w-14 h-14 p-3 bg-blue-600 rounded-full text-slate-100" />
         </Link>
       </div>
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col bg-gradient-to-r from-sky-600 to-sky-400 shadow-2xl rounded w-[350px] mx-auto md:mr-32 lg:mx-auto md:w-1/2 lg:w-full px-6 pt-6 pb-4 lg:px-8 lg:pt-6 lg:pb-8 mb-12"
+        className="flex flex-col bg-gradient-to-r from-sky-500 to-sky-200 border-2 border-white shadow-2xl rounded-xl w-[350px] mx-auto md:mr-32 lg:mx-auto md:w-1/2 lg:w-full px-6 pt-6 pb-4 lg:px-8 lg:pt-6 lg:pb-8 mb-12"
       >
         <h3 className="flex justify-center text-center text-slate-800 text-2xl font-bold font-mono pt-4">
           New post to {user.username}
         </h3>
         <div className="flex flex-col pt-4">
-          <label className="text-slate-100 py-2 text-base">Title</label>
+          <label className="text-slate-800 py-2 text-base">Title</label>
           <input
             type="text"
             placeholder="Title"
@@ -67,7 +67,7 @@ export const PostForm = () => {
             name="title"
             onChange={(e) => setTitle(e.target.value)}
           />
-          <label className="text-slate-100 py-2 text-base">Upload image</label>
+          <label className="text-slate-800 py-2 text-base">Upload image</label>
           <input
             type="file"
             name="image"
@@ -75,7 +75,7 @@ export const PostForm = () => {
             onChange={(e) => setImage(e.target.files[0])}
           />
         </div>
-        <label className="text-slate-100 py-2 text-base">Message</label>
+        <label className="text-slate-800 py-2 text-base">Message</label>
         <textarea
           rows="6"
           placeholder="Leave a comment..."
@@ -85,7 +85,7 @@ export const PostForm = () => {
         />
 
         <button
-          className="bg-slate-800 hover:bg-blue-800 disabled:bg-slate-500 text-white font-bold py-2 px-4 my-4 rounded"
+          className="bg-yellow-300 hover:bg-yellow-400 disabled:bg-slate-500 text-slate-800 font-bold py-2 px-4 my-4 rounded"
           disabled={isSubmit}
         >
           {isSubmit ? (

@@ -31,7 +31,7 @@ export const RegisterForm = () => {
     <div className="flex flex-col-reverse lg:flex-row md:gap-6 lg:gap-24">
       <form
         onSubmit={handleSubmit}
-        className="bg-gradient-to-r from-slate-800 to-slate-600 p-8 rounded-lg shadow-2xl w-full md:w-96 md:p-12"
+        className="bg-gradient-to-r from-slate-800 to-slate-600 p-6 rounded-lg shadow-2xl w-full md:w-96 md:p-12"
       >
         <h1 className="text-center text-3xl mb-6 text-slate-100 font-bold border-b-2 border-slate-400 pb-2">
           Register
@@ -106,7 +106,7 @@ export const RegisterForm = () => {
         </span>
       </form>
 
-      <div className="text-center flex flex-col justify-center items-center mb-4">
+      <div className="text-center flex flex-col justify-center items-center my-2">
         <h1 className="text-white font-bold text-6xl font-sans">Posts App</h1>
         <p className="text-white mt-3">The simplest app to posts!</p>
         <div className="flex flex-col mt-4 text-slate-800">

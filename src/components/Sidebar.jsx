@@ -37,7 +37,7 @@ export default function Navbar() {
                   <ul className="flex md:flex-col gap-12 list-none">
                     <li>
                       <NavLink
-                        className="flex hover:opacity-75 border-0 hover:border-0"
+                        className="flex hover:opacity-75 border-0 hover:border-0 text-white"
                         to="/"
                       >
                         <span className="mx-auto" title="Posts">
@@ -47,7 +47,7 @@ export default function Navbar() {
                     </li>
                     <li>
                       <NavLink
-                        className="flex hover:opacity-75 border-0 hover:border-0"
+                        className="flex hover:opacity-75 border-0 hover:border-0 text-white"
                         to="/newPost"
                       >
                         <span className="mx-auto" title="New Post">

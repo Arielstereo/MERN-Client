@@ -36,9 +36,9 @@ export const LoginForm = () => {
           <div className="lg:w-1/2 md:w-3/4 sm:w-2/3 w-full mx-auto">
             <form
               onSubmit={handleSubmit}
-              className="bg-gradient-to-r from-slate-200 to-slate-300 p-8 md:p-10 lg:p-12 rounded-lg shadow-2xl"
+              className="bg-gradient-to-r from-white to-slate-300 p-8 md:p-10 lg:p-12 rounded-lg shadow-2xl"
             >
-              <h1 className="text-center text-3xl mb-6 text-gray-800 font-bold border-b-2 border-slate-100 pb-2">
+              <h1 className="text-center text-3xl mb-6 text-gray-800 font-bold border-b-2 border-slate-600 pb-2">
                 Login
               </h1>
               <div>
@@ -52,7 +52,7 @@ export const LoginForm = () => {
                   <input
                     type="email"
                     placeholder="E-mail"
-                    className="w-full bg-gray-100 px-4 py-2 rounded-r-lg focus:outline-none"
+                    className="w-full bg-gray-100 px-4 py-2 rounded-r-lg focus:outline-none border-2 border-slate-300 "
                     value={email}
                     name="email"
                     onChange={(e) => setEmail(e.target.value)}
@@ -66,7 +66,7 @@ export const LoginForm = () => {
                 <input
                   type="password"
                   placeholder="Password"
-                  className="w-full bg-gray-100 px-4 py-2 rounded-lg focus:outline-none"
+                  className="w-full bg-gray-100 px-4 py-2 rounded-lg focus:outline-none border-2 border-slate-300"
                   value={password}
                   name="password"
                   onChange={(e) => setPassword(e.target.value)}

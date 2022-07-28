@@ -3,7 +3,7 @@
 
 body {
   font-family: "Play", sans-serif;
-  background-image: linear-gradient(-225deg, #fffeff 0%, #d7fffe 100%);
+  background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
 }
 
 h1 {
