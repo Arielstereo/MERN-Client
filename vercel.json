@@ -7,8 +7,16 @@
   "routes": [
     {
       "src": "(.*).js",
-      "dest": "index.js"            
+      "dest": "/$1.js"            
   },
+  {
+      "src": "(.*).json",
+      "dest": "/$1.json"            
+  },
+  {
+    "src": "(.*).jsx",
+    "dest": "/$1.jsx"            
+},
   {
       "src": "/.*",
       "dest": "index.html"
