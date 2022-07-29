@@ -4,7 +4,7 @@ export const getPostsReq = async ({ token }) => {
   const config = {
     headers: {
       Authorization: `Bearer ${token}`,
-      Origin: "https://app-server-arielstereo.vercel.app",
+      Origin: "https://app-front-arielstereo.vercel.app",
       Methods: "GET, POST, PUT, DELETE, OPTIONS",
     },
     }
@@ -15,7 +15,7 @@ export const createPostsReq = async (post, { token }) => {
   const config = {
     headers: {
       Authorization: `Bearer ${token}`,
-      Origin: "https://app-server-arielstereo.vercel.app",
+      Origin: "https://app-front-arielstereo.vercel.app",
       Methods: "GET, POST, PUT, DELETE, OPTIONS",
       "Content-Type": "multipart/form-data",
     },
@@ -37,7 +37,7 @@ export const deletePostsReq = async (id, { token }) => {
   const config = {
     headers: {
       Authorization: `Bearer ${token}`,
-      Origin: "https://app-server-arielstereo.vercel.app",
+      Origin: "https://app-front-arielstereo.vercel.app",
       Methods: "GET, POST, PUT, DELETE, OPTIONS",
     },
   };
@@ -49,7 +49,7 @@ export const getPostReq = async (id, { token }) => {
   const config = {
     headers: {
       Authorization: `Bearer ${token}`,
-      Origin: "https://app-server-arielstereo.vercel.app",
+      Origin: "https://app-front-arielstereo.vercel.app",
       Methods: "GET, POST, PUT, DELETE, OPTIONS",
     },
   };
@@ -61,7 +61,7 @@ export const updatePostReq = async (id, post, { token }) => {
   const config = {
     headers: {
       Authorization: `Bearer ${token}`,
-      Origin: "https://app-server-arielstereo.vercel.app",
+      Origin: "https://app-front-arielstereo.vercel.app",
       Methods: "GET, POST, PUT, DELETE, OPTIONS",
       "Content-Type": "multipart/form-data",
     },

@@ -3,7 +3,7 @@ import axios from "axios";
 export const loginService = async (credentials) => {
   const config = {
     headers: {
-      Origin: "https://app-server-arielstereo.vercel.app",
+      Origin: "https://app-front-arielstereo.vercel.app",
       Methods: "GET, POST, PUT, DELETE, OPTIONS",
     },
     }
@@ -22,7 +22,7 @@ export const loginService = async (credentials) => {
 export const registerService = async (user) => {
   const config = {
     headers: {
-      Origin: "https://app-server-arielstereo.vercel.app",
+      Origin: "https://app-front-arielstereo.vercel.app",
       Methods: "GET, POST, PUT, DELETE, OPTIONS",
     },
     }
