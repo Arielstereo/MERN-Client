@@ -1,5 +1,5 @@
 import axios from "axios";
-import FormData from 'form-data';
+
 
 export const getPostsReq = async ({ token }) => {
   const config = {
