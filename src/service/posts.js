@@ -3,16 +3,20 @@ import axios from "axios";
 export const getPostsReq = async ({ token }) => {
   const config = {
     headers: {
-      authorization: `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
+      Origin: "https://app-server-arielstereo.vercel.app",
+      Methods: "GET, POST, PUT, DELETE, OPTIONS",
     },
+    }
+    return await axios.get("https://app-server-arielstereo.vercel.app/api/posts/getPosts", config);
   };
 
-  return await axios.get("https://app-server-arielstereo.vercel.app/api/posts/getPosts", config);
-};
 export const createPostsReq = async (post, { token }) => {
   const config = {
     headers: {
-      authorization: `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
+      Origin: "https://app-server-arielstereo.vercel.app",
+      Methods: "GET, POST, PUT, DELETE, OPTIONS",
       "Content-Type": "multipart/form-data",
     },
   };
@@ -32,7 +36,9 @@ export const createPostsReq = async (post, { token }) => {
 export const deletePostsReq = async (id, { token }) => {
   const config = {
     headers: {
-      authorization: `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
+      Origin: "https://app-server-arielstereo.vercel.app",
+      Methods: "GET, POST, PUT, DELETE, OPTIONS",
     },
   };
 
@@ -42,7 +48,9 @@ export const deletePostsReq = async (id, { token }) => {
 export const getPostReq = async (id, { token }) => {
   const config = {
     headers: {
-      authorization: `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
+      Origin: "https://app-server-arielstereo.vercel.app",
+      Methods: "GET, POST, PUT, DELETE, OPTIONS",
     },
   };
 
@@ -52,7 +60,9 @@ export const getPostReq = async (id, { token }) => {
 export const updatePostReq = async (id, post, { token }) => {
   const config = {
     headers: {
-      authorization: `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
+      Origin: "https://app-server-arielstereo.vercel.app",
+      Methods: "GET, POST, PUT, DELETE, OPTIONS",
       "Content-Type": "multipart/form-data",
     },
   };

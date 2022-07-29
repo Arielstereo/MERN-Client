@@ -1,10 +1,17 @@
 import axios from "axios";
 
 export const loginService = async (credentials) => {
+  const config = {
+    headers: {
+      Origin: "https://app-server-arielstereo.vercel.app",
+      Methods: "GET, POST, PUT, DELETE, OPTIONS",
+    },
+    }
   try {
     const res = await axios.post(
       "https://app-server-arielstereo.vercel.app/api/auth/login",
-      credentials
+      credentials,
+      config
     );
     return res.data;
   } catch (e) {
@@ -13,10 +20,17 @@ export const loginService = async (credentials) => {
 };
 
 export const registerService = async (user) => {
+  const config = {
+    headers: {
+      Origin: "https://app-server-arielstereo.vercel.app",
+      Methods: "GET, POST, PUT, DELETE, OPTIONS",
+    },
+    }
   try {
     const res = await axios.post(
       "https://app-server-arielstereo.vercel.app/api/auth/register",
-      user
+      user,
+      config
     );
     return res.data;
   } catch (e) {
