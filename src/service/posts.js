@@ -1,6 +1,5 @@
 import axios from "axios";
 
-
 export const getPostsReq = async ({ token }) => {
   const config = {
     headers: {
@@ -15,6 +14,7 @@ export const createPostsReq = async (post, { token }) => {
     headers: {
       authorization: `Bearer ${token}`,
       "Content-Type": "multipart/form-data",
+      "Access-Control-Allow-Origin" : "*"
     },
   };
   const form = new FormData();
@@ -55,6 +55,7 @@ export const updatePostReq = async (id, post, { token }) => {
     headers: {
       authorization: `Bearer ${token}`,
       "Content-Type": "multipart/form-data",
+      "Access-Control-Allow-Origin" : "*"
     },
   };
   const form = new FormData();
