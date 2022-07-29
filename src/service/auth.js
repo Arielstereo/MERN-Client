@@ -3,8 +3,8 @@ import axios from "axios";
 export const loginService = async (credentials) => {
   const config = {
     headers: {
-      Origin: "https://app-front-arielstereo.vercel.app",
-      Methods: "GET, POST, PUT, DELETE, OPTIONS",
+      origin: "https://app-front-arielstereo.vercel.app",
+      methods: "GET, POST, PUT, DELETE, OPTIONS",
     },
     }
   try {
@@ -22,8 +22,8 @@ export const loginService = async (credentials) => {
 export const registerService = async (user) => {
   const config = {
     headers: {
-      Origin: "https://app-front-arielstereo.vercel.app",
-      Methods: "GET, POST, PUT, DELETE, OPTIONS",
+      origin: "https://app-front-arielstereo.vercel.app",
+      methods: "GET, POST, PUT, DELETE, OPTIONS",
     },
     }
   try {
