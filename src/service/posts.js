@@ -13,7 +13,7 @@ export const createPostsReq = async (post, { token }) => {
   const config = {
     headers: {
       authorization: `Bearer ${token}`,
-      "Content-Type": "multipart/form-data",
+      ContentType: "multipart/form-data",
     },
   };
   const form = new FormData();
@@ -53,7 +53,7 @@ export const updatePostReq = async (id, post, { token }) => {
   const config = {
     headers: {
       authorization: `Bearer ${token}`,
-      "Content-Type": "multipart/form-data",
+      ContentType: "multipart/form-data",
     },
   };
   const form = new FormData();
