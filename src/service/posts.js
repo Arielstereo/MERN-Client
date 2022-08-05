@@ -8,7 +8,7 @@ export const getPostsReq = async ({ token }) => {
   };
 
   return await axios.get(
-    "api/posts/getPosts",
+    "/api/posts/getPosts",
     config
   );
 };
@@ -20,7 +20,7 @@ export const createPostsReq = async (post, { token }) => {
     },
   };
   return await axios.post(
-    "api/posts/create",
+    "/api/posts/create",
     post,
     config
   );
