@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { createPostsReq } from "./../service/posts";
 import { useAuth } from "./../context/AuthContext";
 import { ImSpinner3 } from "react-icons/im";
-import { GoHome } from "react-icons/go";
+
 
 export const PostForm = () => {
   const navigate = useNavigate();
@@ -15,7 +15,7 @@ export const PostForm = () => {
 
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  const [image, setImage] = useState("");
+  const [image, setImage] = useState([]);
   const [newPost, setNewPost] = useState("");
   const [isSubmit, setIsSubmit] = useState(false);
   const [error, setError] = useState("");
@@ -38,7 +38,8 @@ export const PostForm = () => {
       content,
       image,
     };
-
+    const formData = new FormData();
+    formData.append("file", image);
     setIsSubmit(true);
     const postSaved = await createPost(post, { token });
     setNewPost(postSaved);
@@ -46,12 +47,8 @@ export const PostForm = () => {
 
   return (
     <div className="w-full">
-      <div className="invisible lg:visible right-32 top-10 fixed">
-        <Link to={"/"} title="Go Home">
-          <GoHome className="w-14 h-14 p-3 bg-blue-600 rounded-full text-slate-100" />
-        </Link>
-      </div>
       <form
+        encType="multipart/form-data"
         onSubmit={handleSubmit}
         className="flex flex-col bg-gradient-to-r from-sky-500 to-sky-200 border-2 border-white shadow-2xl rounded-xl w-[350px] mx-auto md:mr-32 lg:mx-auto md:w-1/2 lg:w-full px-6 pt-6 pb-4 lg:px-8 lg:pt-6 lg:pb-8 mb-12"
       >

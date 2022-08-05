@@ -2,12 +2,12 @@ import { getPostReq, deletePostsReq, updatePostReq } from "./../service/posts";
 import { useAuth } from "./../context/AuthContext";
 import { usePost } from "../context/PostContext";
 import { useEffect, useState } from "react";
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useParams, useNavigate} from "react-router-dom";
 import toast from "react-hot-toast";
 import { AiFillDelete, AiFillEdit } from "react-icons/ai";
 import { GrFormClose } from "react-icons/gr";
 import { ImSpinner3, ImSpinner } from "react-icons/im";
-import { GoHome } from "react-icons/go";
+
 
 export const Post = () => {
   const { user } = useAuth();
@@ -18,7 +18,7 @@ export const Post = () => {
 
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  const [image, setImage] = useState("");
+  const [image, setImage] = useState([]);
   const date = Date();
 
   const [isSubmit, setIsSubmit] = useState(false);
@@ -35,8 +35,6 @@ export const Post = () => {
   const getPost = async (postId, { token }) => {
     const res = await getPostReq(postId, { token });
     const { post } = res.data;
-    console.log(post);
-    console.log(post.uid);
     if (id === post.uid) {
       setPost(post);
     } else {
@@ -69,6 +67,8 @@ export const Post = () => {
       image,
       date,
     };
+    const formData = new FormData();
+    formData.append("file", image);
     setIsSubmit(true);
     await updatePost(postId, values, { token });
   };
@@ -116,11 +116,6 @@ export const Post = () => {
   if (!isSubmitDelete)
     return (
       <div className="h-screen">
-        <div className="invisible lg:visible right-32 top-10 fixed">
-          <Link to="/" title="Go Home">
-            <GoHome className="w-14 h-14 p-3 bg-blue-600 rounded-full text-slate-100" />
-          </Link>
-        </div>
         <div
           className="flex flex-col lg:flex-row justify-center items-center gap-8 mt-32 lg:mt-10 mx-2 lg:ml-32"
           key={post._id}

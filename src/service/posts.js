@@ -7,26 +7,22 @@ export const getPostsReq = async ({ token }) => {
     },
   };
 
-  return await axios.get("https://app-server-arielstereo.vercel.app/api/posts/getPosts", config);
+  return await axios.get(
+    "api/posts/getPosts",
+    config
+  );
 };
 export const createPostsReq = async (post, { token }) => {
   const config = {
     headers: {
       authorization: `Bearer ${token}`,
       "Content-Type": "multipart/form-data",
-      "Access-Control-Allow-Origin" : "*"
     },
   };
-  const form = new FormData();
-  for (let key in post) {
-    form.append(key, post[key]);
-  }
-
   return await axios.post(
-    "https://app-server-arielstereo.vercel.app/api/posts/create",
+    "api/posts/create",
     post,
-    config,
-    form
+    config
   );
 };
 
@@ -37,7 +33,10 @@ export const deletePostsReq = async (id, { token }) => {
     },
   };
 
-  return axios.delete("https://app-server-arielstereo.vercel.app/api/posts/delete/" + id, config);
+  return axios.delete(
+    "/api/posts/delete/" + id,
+    config
+  );
 };
 
 export const getPostReq = async (id, { token }) => {
@@ -47,7 +46,10 @@ export const getPostReq = async (id, { token }) => {
     },
   };
 
-  return await axios.get("https://app-server-arielstereo.vercel.app/api/posts/get/" + id, config);
+  return await axios.get(
+    "/api/posts/get/" + id,
+    config
+  );
 };
 
 export const updatePostReq = async (id, post, { token }) => {
@@ -55,18 +57,12 @@ export const updatePostReq = async (id, post, { token }) => {
     headers: {
       authorization: `Bearer ${token}`,
       "Content-Type": "multipart/form-data",
-      "Access-Control-Allow-Origin" : "*"
     },
   };
-  const form = new FormData();
-  for (let key in post) {
-    form.append(key, post[key]);
-  }
 
   return await axios.put(
-    "https://app-server-arielstereo.vercel.app/api/posts/update/" + id,
+    "/api/posts/update/" + id,
     post,
-    config,
-    form
+    config
   );
 };

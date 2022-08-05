@@ -2,10 +2,11 @@ import { NavLink } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { useState } from "react";
 import { CgCloseO } from "react-icons/cg";
-import { BsArrowRightCircle, BsFileEarmarkPost } from "react-icons/bs";
+import { BsArrowRightCircle } from "react-icons/bs";
 import { MdPostAdd } from "react-icons/md";
 import { RiLogoutBoxRLine } from "react-icons/ri";
 import { CgLogIn } from "react-icons/cg";
+import { GoHome } from "react-icons/go";
 
 export default function Navbar() {
   const { user, logout } = useAuth();
@@ -41,7 +42,7 @@ export default function Navbar() {
                         to="/"
                       >
                         <span className="mx-auto" title="Posts">
-                          <BsFileEarmarkPost className="w-6 h-6 mb-2" />
+                          <GoHome className="w-6 h-6 mb-2" />
                         </span>
                       </NavLink>
                     </li>
@@ -98,7 +99,7 @@ export default function Navbar() {
                         to="/"
                       >
                         <span className="ml-2 flex items-center gap-4">
-                          Posts <BsFileEarmarkPost className="w-6 h-6" />
+                          Home <GoHome className="w-6 h-6" />
                         </span>
                       </NavLink>
                     </li>
