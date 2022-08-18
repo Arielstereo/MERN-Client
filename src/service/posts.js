@@ -8,7 +8,7 @@ export const getPostsReq = async ({ token }) => {
   };
 
   return await axios.get(
-    "https://app-server-arielstereo.vercel.app/api/posts/getPosts",
+    "/api/posts/getPosts",
     config
   );
 };
@@ -20,7 +20,7 @@ export const createPostsReq = async (post, { token }) => {
     },
   };
   return await axios.post(
-    "https://app-server-arielstereo.vercel.app/api/posts/create",
+    "/api/posts/create",
     post,
     config
   );
@@ -34,7 +34,7 @@ export const deletePostsReq = async (id, { token }) => {
   };
 
   return axios.delete(
-    "https://app-server-arielstereo.vercel.app/api/posts/delete/" + id,
+    "/api/posts/delete/" + id,
     config
   );
 };
@@ -47,7 +47,7 @@ export const getPostReq = async (id, { token }) => {
   };
 
   return await axios.get(
-    "https://app-server-arielstereo.vercel.app/api/posts/get/" + id,
+    "/api/posts/get/" + id,
     config
   );
 };
@@ -61,7 +61,7 @@ export const updatePostReq = async (id, post, { token }) => {
   };
 
   return await axios.put(
-    "https://app-server-arielstereo.vercel.app/api/posts/update/" + id,
+    "/api/posts/update/" + id,
     post,
     config
   );
